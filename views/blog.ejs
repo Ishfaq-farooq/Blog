@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <%- include('head') %>
+    <title>Home</title>
+</head>
+
+<body>
+  <%- include('navbar') %>
+    <div>
+        <div class="card" style="width: 100vw;">
+  <img src="<%= blog.image %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h2><%= blog.title %></h2>
+    <pre class="card-text"><%= blog.body %></pre>
+    <p><strong>Blog By: <%= blog.createdBy.name %></strong></p>
+    <b>CreatedAt: <%= blog.createdAt %></b>
+  </div>
+</div>
+
+<div>
+    <h3>Comments</h3>
+    <div>
+     <% if (locals.comments){ 
+      comments.forEach((comment) =>{ %>
+
+      <div>
+        <p><strong><%= comment.userId.name %></strong></p>
+        <p><%= comment.comment %></p>
+      </div>
+
+    <% } )} %>
+    </div>
+    <% if (locals.user){ %>
+        <form action="/blog/comments/<%= blog._id %>" method="post">
+            <textarea name="comment" id=""></textarea>
+            <button type="submit">Send</button>
+        </form>
+   <% } %>
+</div>
+    </div>
+
+   <%- include('script') %>
+</body>
+</html>

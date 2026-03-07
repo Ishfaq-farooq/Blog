@@ -8,11 +8,11 @@ const handleAddBlog = async (req, res) => {
         const blog = await Blog.create({
             title, image, body, createdBy: req.user._id
         })
-        return res.redirect('/', { user: req.user })
+        return res.redirect('/')
 
     }
     catch (error) {
-        return res.redirect('/blog/addBlog', { error })
+        return res.render('/blog/addBlog', { error })
     }
 }
 

@@ -9,13 +9,13 @@
 <body>
   <%- include('navbar') %>
 
-    <div class="container">
+    <div class="container grid grid-template-3">
       <% if (locals.blogs) { blogs.forEach((blog)=>{ %>
         <div class="card" style="width: 18rem;">
           <img src="<%= blog.image %>" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title"><%= blog.title %></h5>
-            <p class="card-text"><%= blog.body %></p>
+            
             <a href="/blog/readBlog/<%= blog._id %>" class="btn btn-primary">Read Blog</a>
           </div>
         </div>
