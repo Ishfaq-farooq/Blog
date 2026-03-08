@@ -14,8 +14,10 @@ app.set("view engine","ejs");
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 app.use(cookieParser());
-app.use(checkUser());
+app.use(checkUser())
 app.use("/uploads",express.static(path.resolve("uploads")));
+
+console.log(path.join(__dirname, 'uploads/blog'))
 
 const userRoute = require('./Routes/userRoute');
 const blogRoute = require('./Routes/blogRoute');

@@ -42,5 +42,37 @@
     </div>
 
    <%- include('script') %>
+
+<html>
+<head>
+    <title><%= blog.title %></title>
+</head>
+<body>
+
+    <h1><%= blog.title %></h1>
+
+    <div>
+        <img src="<%= blog.image %>" alt="Blog Image" width="400">
+    </div>
+
+    <p>
+        <strong>Posted on:</strong> 
+        <%= blog.createdAt.toDateString() %>
+    </p>
+
+    <% if (blog.createdBy) { %>
+        <p>s
+            <strong>Author:</strong> 
+            <%= blog.createdBy.name %>
+        </p>
+    <% } %>
+
+    <hr>
+
+    <p>
+        <%= blog.body %>
+    </p>
+
+
 </body>
 </html>
