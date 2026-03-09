@@ -34,6 +34,6 @@ app.use('/blog',blogRoute);
 
 
 
-mongoose.connect("mongodb://localhost:27017/blog")
+mongoose.connect(process.env.MONGO_URI)
 .then(()=>{console.log("mongodb connected successfully")})
 app.listen(PORT,()=>{console.log(`Server is running on port ${PORT}`)})
