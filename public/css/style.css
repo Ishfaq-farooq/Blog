@@ -1,0 +1,57 @@
+
+/* Container grid */
+.grid {
+    display: grid;
+    gap: 1.5rem; /* space between cards */
+    padding: 1rem;
+}
+
+/* 3-column responsive layout */
+.grid-template-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Card styling */
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card image */
+.card-img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Card body */
+.card-body {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Card title */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Read Blog button */
+.card .btn {
+    align-self: start;
+    margin-top: auto;
+}
+
+/* Optional: hover effect */
+.card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.2s ease-in-out;
+}

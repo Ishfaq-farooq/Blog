@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 app.use(cookieParser());
 app.use(checkUser())
+app.use(express.static("public"));
 app.use("/uploads",express.static(path.resolve("uploads")));
 
 console.log(path.join(__dirname, 'uploads/blog'))
